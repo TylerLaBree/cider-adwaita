@@ -1,4 +1,4 @@
-# cider-adwaita
+# Cider Themes: Adwaita and Flatwaita
 Two adwaita-style themes for [Cider](https://cider.sh/).
 
 - Adwaita: inspired by the Gnome desktop environment.
