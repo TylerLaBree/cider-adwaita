@@ -1,0 +1,33 @@
+/* ---------- FLATWAITA THEME ---------- */
+/*             (Warm Variant)            */
+
+/* ------------------------------------- */
+/*          Basic Configuration          */
+/* ------------------------------------- */
+:root {
+    --sidebar-dark: #303030;
+    --background-dark: #242424;
+    --overlay-dark: #383838;
+    --sidebar-btn-dark: #454545;
+    --text-subtle-dark: #887F78;
+    --text-dark: #E2D4C8;
+    --border-light: rgba(226, 212, 200, 0.15);
+
+    --sidebar-light: #faf4ed;
+    --background-light: #fffaf3;
+    --overlay-light: #f2e9e1;
+    --sidebar-btn-light: #f4ede8;
+    --text-subtle-light: #9893a5;
+    --text-light: #575279;
+    --border-light: rgba(87, 82, 121, 0.15);
+    
+    /* See https://rosepinetheme.com/palette/ingredients/ */
+    --accent-color: #d7827e;
+    /*--accent-color: #b4637a; */
+    /* --accent-color: #797593; */
+    --accent-color-light: var(--accent-color);
+    --accent-color-dark: var(--accent-color);
+    
+    --musicKeyColor: var(--accent-color);
+    --keyColor: var(--accent-color);
+}

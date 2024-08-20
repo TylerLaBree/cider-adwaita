@@ -1,0 +1,369 @@
+body {
+  font-family: 'Inter Variable', 'Cantarell', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+}
+
+
+/* ------------------------------------- */
+/*               Dark Theme              */
+/* ------------------------------------- */
+
+body.body--dark {
+  --keyColor: var(--accent-color-dark);
+  --systemGray :var(--text-subtle-dark);
+  --progressColor: var(--text-subtle-dark);
+  --systemPrimary: var(--text-dark);
+  --systemSecondary: var(--text-subtle-dark);
+}
+
+body.body--dark .q-list--dark, .q-item--dark {
+  color: var(--text-dark);
+}
+
+body.body--dark .q-menu {
+  background-color: var(--overlay-dark);
+}
+
+body.body--dark [sfc-name="QToolbar"] {
+  color: var(--text-dark);
+}
+
+body.body--dark [sfc-name="BaseTransition"] .ctxmenu-icon {
+  color: var(--text-dark);
+}
+
+body.body--dark {
+  background-color: var(--sidebar-dark);
+  --textDefault: var(--text-dark);
+  color: var(--text-dark);
+}
+
+body.body--dark .sidebar_nav-btn.active {
+  color: var(--text-dark);
+  background-color: var(--sidebar-btn-dark);
+}
+
+body.body--dark .new-shell-page-container {
+  box-shadow: unset;
+  border-left: 1px solid var(--background-dark);
+  background-color: var(--background-dark);
+}
+
+body.body--dark .q-icon {
+  color: var(--text-dark);
+}
+
+body.body--dark [sfc-name="Sidebar"] .nucleo-icon {
+  color: var(--text-dark);
+}
+
+body.body--dark .cloud-buttons .add-to-library-btn {
+  color: var(--text-dark);
+}
+
+body.body--dark .cloud-buttons .nucleo-icon {
+  color: var(--text-dark);
+}
+
+body.body--dark .cloud-buttons .nav-icon {
+  color: var(--text-dark);
+}
+
+body.body--dark .cloud-buttons .feather {
+  color: var(--text-dark);
+}
+
+body.body--dark ._svg-icon {
+  background: var(--text-dark);
+}
+
+body.body--dark .q-tab__label {
+  color: var(--text-dark);
+}
+
+body.body--dark .overlay-progress-track {
+  background-color: var(--text-subtle-dark);
+}
+
+body.body--dark .overlay-progress-bar {
+  background-color: var(--text-dark);
+}
+
+
+/* ------------------------------------- */
+/*               Light Theme             */
+/* ------------------------------------- */
+
+body.body--light {
+  --keyColor: var(--accent-color-light);
+  --systemGray :var(--text-subtle-light);
+  --progressColor: var(--text-subtle-light);
+  --systemPrimary: var(--text-light);
+  --systemSecondary: var(--text-subtle-light);
+}
+
+body.body--light .q-menu {
+  background-color: var(--overlay-light);
+  color: var(--text-light);
+}
+
+body.body--light [sfc-name="QToolbar"] {
+  color: var(--text-light);
+}
+
+body.body--light [sfc-name="BaseTransition"] .ctxmenu-icon {
+  color: var(--text-light);
+}
+
+body.body--light {
+  background-color: var(--sidebar-light);
+  --textDefault: var(--text-light);
+  color: var(--text-light);
+}
+
+body.body--light .sidebar_nav-btn.active {
+  color: var(--text-light);
+  background-color: var(--sidebar-btn-light);
+}
+
+body.body--light .new-shell-page-container {
+  box-shadow: unset;
+  border-left: 1px solid var(--border-light);
+  background-color: var(--background-light);
+}
+
+body.body--light .q-icon {
+  color: var(--text-light);
+}
+
+body.body--light [sfc-name="Sidebar"] .nucleo-icon {
+  color: var(--text-light);
+}
+
+body.body--light .cloud-buttons .add-to-library-btn {
+  color: var(--text-light);
+}
+
+body.body--light .cloud-buttons .nucleo-icon {
+  color: var(--text-light);
+}
+
+body.body--light .cloud-buttons .nav-icon {
+  color: var(--text-light);
+}
+
+body.body--light .cloud-buttons .feather {
+  color: var(--text-light);
+}
+
+body.body--light ._svg-icon {
+  background: var(--text-light);
+}
+
+body.body--light .q-tab__label {
+  color: var(--text-light);
+}
+
+body.body--light .overlay-progress-track {
+  background-color: var(--text-subtle-light);
+}
+
+body.body--light .overlay-progress-bar {
+  background-color: var(--text-light);
+}
+
+body.body--light .volume-container.active [sfc-name="VueFeather"] {
+  color: var(--background-dark);
+} /* Whacky workaround for light mode only */
+
+
+/* ------------------------------------- */
+/*         Bigger/Rounder Buttons        */
+/* ------------------------------------- */
+
+.primary-actions {
+  height: 44px;
+  border-radius: 60px;
+}
+
+body .primary-actions ._svg-icon {
+  background: var(--text-dark);
+}
+
+body .lockupControls ._svg-icon {
+  background: var(--text-dark);
+}
+
+.detail-actions {
+  border: 0px 20px;
+}
+
+
+/* ------------------------------------- */
+/*           Simplified Sidebar          */
+/* ------------------------------------- */
+
+.sidebar_nav-btn {
+  height: 42px;
+}
+
+.am-expansion-item {
+  pointer-events: none; /* Disables clicking */
+  background-color: inherit; /* Ensures background color remains the same */
+  border: none; /* Removes any borders, if necessary */
+  cursor: default; /* Changes cursor to default, removing the pointer hand */
+}
+
+.am-expansion-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 5px 0;
+  height: 0px;
+}
+
+.am-expansion-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+}
+
+body.body--light .am-expansion-item::before {
+  background-color: var(--text-light);
+  opacity: 0.15;
+}
+
+body.body--dark .am-expansion-item::before {
+  background-color: var(--text-dark);
+  opacity: 0.15;
+}
+
+.am-expansion-item:first-of-type {
+  display: none;
+}
+
+.sidebar-label,
+.expand-button {
+  opacity: 0.0;
+}
+
+
+/* ------------------------------------- */
+/*             Media Controls            */
+/* ------------------------------------- */
+
+[sfc-name="AMPlayAction"],
+[sfc-name="AMPauseAction"] {
+  --center: var(--accent-color-light);
+  border: 0px;
+  background-size: cover;
+  height: 56px;
+  width: 56px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 100%;
+  .play-icon {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    --dist: 4px;
+    top: var(--dist);
+    left: var(--dist);
+    right: var(--dist);
+    bottom: var(--dist);
+    background-color: var(--center);
+    background-size: 38px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+  }
+}
+
+body.body--light [sfc-name="AMPlayAction"],
+[sfc-name="AMPauseAction"] {
+  --center: var(--accent-color-light);
+  .play-icon {
+    ._svg-icon {
+      background: var(--background-light);
+    }
+  }
+}
+
+body.body--dark [sfc-name="AMPlayAction"],
+[sfc-name="AMPauseAction"] {
+  --center: var(--accent-color-dark);
+  .play-icon {
+    ._svg-icon {
+      background: var(--background-light);
+    }
+  }
+}
+
+[sfc-name="AMPlaybackActions"] {
+  margin-top: 0px;
+  align-items: center;
+
+  ._svg-icon {
+    --size: 26px;
+    background: var(--textDefault);
+  }
+}
+
+[sfc-name="MojavePlayer"] {
+  display: grid;
+  height: 113px;
+  align-items: center;
+}
+
+body.body--light .lcdPlayer.docked {
+  box-shadow: 0 0 0 1px color(srgb 0 0 0 / 0.0525), 0 2px 8px 2px rgba(0, 0, 0, 0.07), 0 3px 20px 10px rgba(0, 0, 0, 0.05), 0 6px 32px 16px rgba(0, 0, 0, 0.02);
+}
+
+body.body--dark .lcdPlayer.docked {
+  box-shadow: 0 0 0 1px color(srgb 0 0 0 / 0.1875), 0 2px 8px 2px rgba(0, 0, 0, 0.25), 0 3px 20px 10px rgba(0, 0, 0, 0.05), 0 6px 32px 16px rgba(0, 0, 0, 0.02);
+}
+
+[sfc-name="LCDPlayer"] {
+  height: 120px;
+}
+
+.left-drawer-resize-handle {
+  display: none;
+}
+
+.ns-sidebar.ns-sidebar--left {
+  /* width: clamp(202px, 25%, 279px); */ /* Gnome Settings */
+  width: clamp(180px, 20%, 240px); /* Gnome Files */
+}
+
+.left-drawer-overlay { /* From MainLayout-BgyJkwDp.css */
+  width: 250px;
+}
+
+body.body--light .left-drawer-overlay {
+    background: var(--sidebar-light);
+}
+
+.q-tooltip {
+  padding: 0px 0px;
+  border-radius: 10px;
+  /* box-shadow: unset; */
+}
+
+body.body--dark .q-tooltip {
+  border: 1px solid var(--border-dark);
+}
+
+body.body--light .q-tooltip {
+  border: 1px solid var(--border-light);
+}
+

@@ -1,0 +1,10 @@
+name: Flatwaita-testing
+author: nthelt
+stylesheets:
+  - file: main.scss
+    name: Base theme
+    description: Warm, with toasted notes. Designed to match the gnome desktop environment. Based on Rosé Pine.
+  - file: window-controls.scss
+    name: Window Controls
+    description: Hide minimize and maximize, change to adwaita-style close button.
+

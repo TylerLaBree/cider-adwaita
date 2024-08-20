@@ -1,0 +1,52 @@
+/* ------------------------------------- */
+/*            Hide Min/Maximize          */
+/* ------------------------------------- */
+
+.window-control.minimize,
+.window-control.minmax {
+  display: none;
+}
+
+.window-controls {
+  width: 50px; 
+  margin: 0px 0px;
+}
+
+.q-toolbar.chrome-top {
+  padding: 0 45px 0 12px;
+}
+
+.window-control.close {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Ensures nothing spills outside the boundaries */
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.window-control.close::after {
+  content: '';
+  top: 5px;
+  left: 13px;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  z-index: 0;
+  transition: 0;
+  scale: 1;
+  opacity: 0.1;
+}
+
+body.body--dark .window-control.close::after {
+  background-color: var(--text-dark); /* Circle background with opacity */
+}
+
+body.body--light .window-control.close::after {
+  background-color: var(--text-light); /* Circle background with opacity */
+}
+
