@@ -4,7 +4,6 @@ body {
 }
 
 body.body--dark {
-  --my-accent-color: var(--accent-color-dark);
   --sidebar-color: var(--sidebar-dark);
   --background-color: var(--background-dark);
   --overlay-color: var(--overlay-dark);
@@ -15,7 +14,6 @@ body.body--dark {
 }
 
 body.body--light {
-  --my-accent-color: var(--accent-color-light);
   --sidebar-color: var(--sidebar-light);
   --background-color: var(--background-light);
   --overlay-color: var(--overlay-light);
@@ -25,10 +23,7 @@ body.body--light {
   --border-color: var(--border-light);
 }
 
-
-
 body {
-  --keyColor: var(--accent-color);
   --systemGray :var(--text-subtle-color);
   --progressColor: var(--text-subtle-color);
   --systemPrimary: var(--text-color);
@@ -267,6 +262,27 @@ body.body--dark .lcdPlayer.docked {
 [sfc-name="LCDPlayer"] {
   height: 120px;
 }
+
+/* Fixes highlighting of active themes */
+.q-item.q-item-type.row.no-wrap.q-item--clickable.q-link.cursor-pointer.q-focusable.q-hoverable.bg-primary.text-white {
+  background-color: var(--background-color);
+  color: var(--q-primary);
+}
+
+/* Light text in colored menu button */
+.q-menu .q-item.q-hoverable:hover {
+  color: var(--background-light);
+  .q-icon,
+  .nucleo-icon,
+  .nav-icon,
+  .feather {
+    color: var(--background-light);
+  }
+  [sfc-name="QItemLabel"] {
+    color: var(--background-light);
+  }
+}
+
 
 /* Fixes album art tooltip, but breaks other tooltips */
 /*

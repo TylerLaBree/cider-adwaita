@@ -5,6 +5,21 @@ stylesheets:
     name: Base theme
     description: Warm, with toasted notes. Designed to match the gnome desktop environment. Based on Rosé Pine.
   - file: window-controls.scss
-    name: Window Controls
+    name: Hide window controls
     description: Hide minimize and maximize, change to adwaita-style close button.
+  - file: love.scss
+    name: Love accent
+  - file: gold.scss
+    name: Gold accent
+  - file: rose.scss
+    name: Rose accent
+  - file: pine.scss
+    name: Pine accent
+  - file: foam.scss
+    name: Foam accent
+  - file: iris.scss
+    name: Iris accent
+  - file: flat.scss
+    name: Flat accent
+
 

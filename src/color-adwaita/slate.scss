@@ -1,0 +1,20 @@
+:root {
+  --my-accent-color: #6f8396;
+  --my-accent-color-light: #526678;
+  --my-accent-color-dark: #bbd1e5;
+}
+
+body {
+  --keyColor: var(--my-accent-color);
+  --musicKeyColor: var(--my-accent-color);
+  --accent-color: var(--my-accent-color);
+}
+
+body.body--light {
+  --q-primary: var(--my-accent-color-light, --my-accent-color);
+}
+
+body.body--dark {
+  --q-primary: var(--my-accent-color-dark, --my-accent-color);
+}
+

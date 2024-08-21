@@ -11,3 +11,6 @@ cat src/main.scss >> build/flatwaita/main.scss
 
 cp src/window-controls.scss build/adwaita/
 cp src/window-controls.scss build/flatwaita/
+
+cp src/color-adwaita/* build/adwaita
+cp src/color-flatwaita/* build/flatwaita
