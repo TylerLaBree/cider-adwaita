@@ -17,29 +17,48 @@
 }
 
 .window-control.close {
-  position: relative;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden; /* Ensures nothing spills outside the boundaries */
   font-size: 12px;
   font-weight: 900;
-}
-
-.window-control.close::after {
-  content: '';
-  top: 5px;
-  left: 13px;
-  position: absolute;
-  width: 24px;
+  --center: var(--keyColor);
+  background-size: cover;
+  margin: 13px 13px;
   height: 24px;
-  border-radius: 50%;
-  z-index: 0;
-  transition: 0;
-  scale: 1;
-  opacity: 0.1;
-  background-color: var(--text-color); /* Circle background with opacity */
+  width: 24px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 100%;
+  .play-icon {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    ._svg-icon {
+      background: var(--background-light);
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    --dist: 0px;
+    top: var(--dist);
+    left: var(--dist);
+    right: var(--dist);
+    bottom: var(--dist);
+    background-color: var(--center);
+    background-size: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+
+    opacity: 0.1;
+    transition: opacity .15s ease-in-out;
+    background-color: var(--text-color);
+    scale: 1;
+  }
+  &:hover::after {
+    opacity: 0.16;
+  }
 }
 
