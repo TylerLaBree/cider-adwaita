@@ -32,6 +32,17 @@ body {
 
 /* ------------------------------------- */
 
+.bg-primary.text-white {
+  background-color: var(--keyColor);
+  .q-icon {
+    color: var(--background-light);
+  }
+}
+
+.q-icon {
+  color: var(--text-color);
+}
+
 .q-list--dark, .q-item--dark {
   color: var(--text-color);
 }
@@ -66,15 +77,18 @@ body {
 }
 
 [sfc-name="Sidebar"] .nucleo-icon,
-.q-icon {
+[sfc-name="Sidebar"] .q-icon {
   color: var(--text-color);
 }
 
-.cloud-buttons .add-to-library-btn,
-.nucleo-icon,
-.nav-icon,
-.feather {
-  color: var(--text-color);
+.cloud-buttons {
+  .add-to-library-btn,
+  .nucleo-icon,
+  .q-icon,
+  .nav-icon,
+  .feather {
+    color: var(--text-color);
+  }
 }
 
 ._svg-icon {
@@ -242,6 +256,14 @@ body.body--light .volume-container.active [sfc-name="VueFeather"] {
   ._svg-icon {
     --size: 26px;
     background: var(--textDefault);
+  }
+}
+[sfc-name="AMPlaybackActions"] {
+  .action-active [sfc-name="QIcon"] {
+    color: var(--q-primary);
+  }
+  .action-indicator {
+    color: var(--q-primary);
   }
 }
 
