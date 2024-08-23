@@ -319,4 +319,10 @@ body.body--dark .lcdPlayer.docked {
 }
 */
 
+.chrome-button {
+  &:hover:before {
+    /* background-color: var(--sidebar-btn-color); */
+    opacity: 0.15;
+  }
+}
 
