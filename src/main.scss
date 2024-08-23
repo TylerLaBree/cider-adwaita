@@ -76,9 +76,12 @@ body {
   background-color: var(--background-color);
 }
 
-[sfc-name="Sidebar"] .nucleo-icon,
-[sfc-name="Sidebar"] .q-icon {
-  color: var(--text-color);
+[sfc-name="Sidebar"] {
+  .nucleo-icon,
+  .q-icon,
+  .feather {
+    color: var(--text-color);
+  }
 }
 
 .cloud-buttons {
