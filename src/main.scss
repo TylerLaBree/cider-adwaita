@@ -28,6 +28,7 @@ body {
   --progressColor: var(--text-subtle-color);
   --systemPrimary: var(--text-color);
   --systemSecondary: var(--text-subtle-color);
+  --systemTertiary: var(--text-color);
 }
 
 /* ------------------------------------- */
@@ -79,7 +80,7 @@ body {
 [sfc-name="Sidebar"] {
   .nucleo-icon,
   .q-icon,
-  .feather {
+  .nav-icon {
     color: var(--text-color);
   }
 }
