@@ -33,6 +33,11 @@ body {
 
 /* ------------------------------------- */
 
+[sfc-name="RichAlbumGridDetails"] {
+  border-radius: 12px;
+  margin: 0px 0px 0px 15px;
+}
+
 .bg-primary.text-white {
   background-color: var(--keyColor);
   .q-icon {
@@ -40,8 +45,12 @@ body {
   }
 }
 
-.q-icon {
+:not([sfc-name="RichAlbumGridDetails"]) .q-icon {
   color: var(--text-color);
+}
+
+[sfc-name="RichAlbumGridDetails"] .q-icon {
+  color: inherit !important;
 }
 
 .q-list--dark, .q-item--dark {
@@ -309,7 +318,6 @@ body.body--dark .lcdPlayer.docked {
   }
 }
 
-
 /* Fixes album art tooltip, but breaks other tooltips */
 /*
 .q-tooltip {
@@ -319,10 +327,17 @@ body.body--dark .lcdPlayer.docked {
 }
 */
 
+.chrome-button.window-nodrag.active::before {
+  opacity: 0.15 !important;
+}
+
 .chrome-button {
   &:hover:before {
-    /* background-color: var(--sidebar-btn-color); */
     opacity: 0.15;
   }
+}
+
+.chrome-button::before {
+  opacity: 0;
 }
 
