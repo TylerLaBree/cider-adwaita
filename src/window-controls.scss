@@ -28,16 +28,6 @@
   display: grid;
   place-items: center;
   border-radius: 100%;
-  .play-icon {
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    place-items: center;
-    ._svg-icon {
-      background: var(--background-light);
-    }
-  }
   &::after {
     content: "";
     position: absolute;

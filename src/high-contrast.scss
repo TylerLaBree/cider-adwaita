@@ -1,0 +1,55 @@
+:root {
+  --border-dark: var(--border-hc-dark)!important;
+  --border-light: var(--border-hc-light))!important;
+  --text-subtle-dark: var(--text-dark);
+  --text-subtle-light: var(--text-light);
+}
+
+body.body--light {
+  --border-color: var(--border-hc-light);
+}
+
+body.body--dark {
+  --border-color: var(--border-hc-dark);
+}
+
+.window-control.close:after {
+  border: 10px solid var(--border-color);
+}
+
+.new-shell-page-container {
+  border-left: 1px solid var(--border-color);
+}
+
+.lcdPlayer.docked {
+  border-top: 1px solid var(--border-color);
+}
+
+.q-drawer--left.q-drawer--bordered {
+    border-right: 1px solid var(--border-color);
+}
+
+.section .c-listitem-short:before {
+  border-top: 1px solid var(--border-color);
+}
+
+.window-control.close {
+  border: 1px solid var(--border-color)!important;
+}
+
+.sidebar_nav-btn {
+  border: 1px solid var(--sidebar-color)!important;
+}
+
+.sidebar_nav-btn.active {
+  border: 1px solid var(--border-color)!important;
+}
+
+.sidebar_nav-btn:hover {
+  border: 1px solid var(--border-color)!important;
+}
+
+.new-shell {
+  border: 1px solid var(--border-color)!important;
+}
+

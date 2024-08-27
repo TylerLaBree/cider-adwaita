@@ -7,6 +7,8 @@ stylesheets:
   - file: window-controls.scss
     name: Hide window controls
     description: Hide minimize and maximize; change to adwaita-style close button.
+  - file: high-contrast.scss
+    name: High contrast
   - file: blue.scss
     name: Blue accent
   - file: teal.scss

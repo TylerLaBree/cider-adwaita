@@ -7,7 +7,7 @@ body.body--dark {
   --sidebar-color: var(--sidebar-dark);
   --background-color: var(--background-dark);
   --overlay-color: var(--overlay-dark);
-  --sidebar-btn-color: var(--sidebar-bn-dark);
+  --sidebar-btn-color: var(--sidebar-btn-dark);
   --text-subtle-color: var(--text-subtle-dark);
   --text-color: var(--text-dark);
   --border-color: var(--border-dark);
@@ -17,7 +17,7 @@ body.body--light {
   --sidebar-color: var(--sidebar-light);
   --background-color: var(--background-light);
   --overlay-color: var(--overlay-light);
-  --sidebar-btn-color: var(--sidebar-bn-light);
+  --sidebar-btn-color: var(--sidebar-btn-light);
   --text-subtle-color: var(--text-subtle-light);
   --text-color: var(--text-light);
   --border-color: var(--border-light);
@@ -75,11 +75,6 @@ body {
   color: var(--text-color);
 }
 
-.sidebar_nav-btn.active {
-  color: var(--text-color);
-  background-color: var(--sidebar-btn-color);
-}
-
 .new-shell-page-container {
   box-shadow: unset;
   border-left: 1px solid var(--background-color);
@@ -93,6 +88,17 @@ body {
     color: var(--text-color);
   }
 }
+
+.sidebar_nav-btn:hover {
+  color: var(--text-color);
+  background-color: var(--sidebar-btn-color)!important;
+}
+
+.sidebar_nav-btn.active {
+  color: var(--text-color);
+  background-color: var(--sidebar-btn-color)!important;
+}
+
 
 .cloud-buttons {
   .add-to-library-btn,
@@ -194,8 +200,8 @@ body.body--light .volume-container.active [sfc-name="VueFeather"] {
   left: 0;
   right: 0;
   height: 1px;
-  background-color: var(--text-color);
-  opacity: 0.15;
+  background-color: var(--border-color);
+  opacity: 1;
 }
 
 .am-expansion-item:first-of-type {
@@ -339,5 +345,10 @@ body.body--dark .lcdPlayer.docked {
 
 .chrome-button::before {
   opacity: 0;
+}
+
+.search-box.cSearch {
+  border: 1px solid var(--border-color)!important;
+  box-shadow: unset;
 }
 
