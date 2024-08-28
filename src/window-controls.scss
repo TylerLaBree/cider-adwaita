@@ -12,7 +12,7 @@
   margin: 0px 0px;
 }
 
-.q-toolbar.chrome-top {
+.q-toolbar.chrome-top:not(.no-controls) {
   padding: 0 45px 0 12px;
 }
 
