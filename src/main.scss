@@ -327,14 +327,11 @@ body.body--dark .lcdPlayer.docked {
   }
 }
 
-/* Fixes album art tooltip, but breaks other tooltips */
-/*
-.q-tooltip {
+.q-tooltip.q-tooltip--style.q-position-engine.no-pointer-events:has(.popover-artwork) {
   padding: 0px 0px;
   border-radius: 10px;
   border: 1px solid var(--border-color);
 }
-*/
 
 .chrome-button.window-nodrag.active::before {
   opacity: 0.15 !important;
