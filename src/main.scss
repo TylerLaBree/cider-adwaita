@@ -110,8 +110,15 @@ body {
   }
 }
 
-._svg-icon {
+._svg-icon:not(.lockupControls ._svg-icon) {
   background: var(--text-color);
+}
+
+.lockupControls .play:hover,
+.lockupControls .menu:hover {
+  ._svg-icon {
+    background: var(--text-color);
+  }
 }
 
 .q-tab__label {
@@ -156,10 +163,6 @@ body.body--light .volume-container.active [sfc-name="VueFeather"] {
 .primary-actions {
   height: 44px;
   border-radius: 60px;
-}
-
-.lockupControls ._svg-icon { /* Suggested album buttons: play and more */
-  background: var(--background-light);
 }
 
 .primary-actions {
