@@ -375,7 +375,9 @@ body.body--dark .lcdPlayer.docked {
 }
 
 .search-box.cSearch {
-  border: 1px solid var(--border-color)!important;
+  border: unset;
   box-shadow: unset;
+  background: var(--sidebar-btn-color);
+  font-size: 14px;
 }
 
