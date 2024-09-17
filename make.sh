@@ -15,5 +15,8 @@ cp src/window-controls.scss build/flatwaita/
 cp src/high-contrast.scss build/adwaita/
 cp src/high-contrast.scss build/flatwaita/
 
+cp src/big-screen.scss build/adwaita/
+cp src/big-screen.scss build/flatwaita/
+
 cp src/color-adwaita/* build/adwaita
 cp src/color-flatwaita/* build/flatwaita

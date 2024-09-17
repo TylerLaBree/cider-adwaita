@@ -1,0 +1,70 @@
+/* ------------------------------------- */
+/*             Big Screen Mode           */
+/* ------------------------------------- */
+
+:root {
+  --immersive-background: #303030;
+}
+
+.lyric-view {
+  padding-top: 40vh;
+}
+
+.lcdplayer-bottom .q-card.q-card--dark.q-dark.q-card--flat.no-shadow.q-pa-md.lcdPlayer.docked {
+  box-shadow: unset;
+  /* background: var(--immersive-background); */
+  .row.lcdControls .col-4.gt-xs {
+    width: 55%;
+    .overlay-progress {
+      height: 30px;
+      top: -320%;
+    }
+    .am-currenttime,
+    .am-duration {
+      font-size: 16px;
+    }
+  }
+}
+
+.player-modal [sfc-name="AMPMetadataMojave"] {
+  .song-name,
+  .release-info {
+    font-size: 20px;
+  }
+}
+
+.player-modal {
+  ._svg-icon {
+    height: 32px;
+    width: 32px;
+  }
+}
+
+.player-modal {
+  [sfc-name="AMPlaybackActions"] {
+    display: flex;
+    gap: 8px;
+  }
+  [sfc-name="AMPlayAction"],
+  [sfc-name="AMPauseAction"] {
+    height: 60px;
+    width: 60px;
+  }
+}
+
+.player-modal .badge-container {
+  display: none;
+}
+
+.lyric-line:not([sfc-name="RightDrawerContent"] .lyric-line) {
+  font-size: 4vw!important;
+}
+
+.lyrics-written-by:not([sfc-name="RightDrawerContent"] .lyrics-written-by) {
+  font-size: 2vw;
+  margin-top: 5vw;
+  br {
+    display: none;
+  }
+}
+

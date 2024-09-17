@@ -7,6 +7,9 @@ stylesheets:
   - file: window-controls.scss
     name: Hide window controls
     description: Hide minimize and maximize, change to adwaita-style close button.
+  - file: big-screen.scss
+    name: Big screen
+    description: Optimizes immersive mode for TVs.
   - file: high-contrast.scss
     name: High contrast
   - file: love.scss
