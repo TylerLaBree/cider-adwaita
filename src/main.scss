@@ -35,8 +35,22 @@ body {
 
 [sfc-name="RichAlbumGridDetails"] {
   border-radius: 12px;
-  margin: 0px 0px 0px 15px;
+  /* margin: 0px 0px 0px 15px; */
   border: 1px solid var(--border-color);
+  --keyColor: var(--textColor);
+  .ri-list-item:focus {
+    color: var(--bgColor);
+    .playing-indicator {
+      --eq-bars-bg-color: var(--bgColor);
+    }
+    .q-icon {
+      color: var(--bgColor);
+    }
+  }
+}
+.shelf-item-expanded {
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .bg-primary.text-white {
@@ -46,12 +60,24 @@ body {
   }
 }
 
-:not([sfc-name="RichAlbumGridDetails"]) .q-icon {
+:not(.lockupControls, [sfc-name="RichAlbumGridDetails"]) .q-icon {
   color: var(--text-color);
 }
 
 [sfc-name="RichAlbumGridDetails"] .q-icon {
-  color: inherit !important;
+  color: var(--textColor) !important;
+  .material-icons {
+    font-weight: 900;
+  }
+}
+
+[sfc-name="RichAlbumGridDetails"] .artwork-container {
+  border-radius: 12px;
+  -webkit-mask-image: unset;
+  [sfc-name="MediaItemArtwork"] {
+    border-radius: 12px;
+    border: 1px solid transparent;
+  }
 }
 
 .q-list--dark, .q-item--dark {
@@ -111,7 +137,7 @@ body {
   }
 }
 
-._svg-icon:not(.lockupControls ._svg-icon) {
+._svg-icon:not(.lockupControls ._svg-icon, [sfc-name="RichAlbumGridDetails"] ._svg-icon) {
   background: var(--text-color);
 }
 
