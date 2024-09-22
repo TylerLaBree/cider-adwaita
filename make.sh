@@ -18,5 +18,5 @@ cp src/high-contrast.scss build/flatwaita/
 cp src/big-screen.scss build/adwaita/
 cp src/big-screen.scss build/flatwaita/
 
-cp src/color-adwaita/* build/adwaita
-cp src/color-flatwaita/* build/flatwaita
+cp src/adwaita-accent-colors/* build/adwaita
+cp src/flatwaita-accent-colors/* build/flatwaita
