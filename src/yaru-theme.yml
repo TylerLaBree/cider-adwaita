@@ -1,0 +1,35 @@
+name: Yaru
+author: nthelt
+stylesheets:
+  - file: main.scss
+    name: Base theme
+    description: Minimalist and sleek. Designed to match Ubuntu.
+  - file: window-controls.scss
+    name: Hide window controls
+    description: Hide minimize and maximize; change to adwaita-style close button.
+  - file: big-screen.scss
+    name: Big screen
+    description: Optimizes immersive mode for TVs.
+  - file: high-contrast.scss
+    name: High contrast
+  - file: orange.scss
+    name: Orange accent
+  - file: bark.scss
+    name: Bark accent
+  - file: sage.scss
+    name: Sage accent
+  - file: olive.scss
+    name: Olive accent
+  - file: viridian.scss
+    name: Viridian accent
+  - file: prussian-green.scss
+    name: Prussian green accent
+  - file: blue.scss
+    name: Blue accent
+  - file: purple.scss
+    name: Purple accent
+  - file: magenta.scss
+    name: Magenta accent
+  - file: red.scss
+    name: Red accent
+
