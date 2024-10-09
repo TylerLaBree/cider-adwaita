@@ -1,0 +1,60 @@
+.sidebar_nav-btn.active {
+  color: var(--text-color);
+  background-color: var(--my-accent-color)!important;
+}
+
+.window-controls {
+  width: 114px; 
+  margin: 0px 0px;
+}
+
+.q-toolbar.chrome-top:not(.no-controls) {
+  padding: 0 114px 0 6px;
+}
+
+.window-control.close,
+.window-control.minmax,
+.window-control.minimize {
+  font-size: 12px;
+  font-weight: 900;
+  background-size: cover;
+  margin: 12px 6px;
+  padding: 0px 12px;
+  height: 24px;
+  width: 24px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 100%;
+  &::after {
+    content: "";
+    position: absolute;
+    --dist: 0px;
+    top: var(--dist);
+    left: var(--dist);
+    right: var(--dist);
+    bottom: var(--dist);
+    background-color: var(--center);
+    background-size: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+
+    opacity: 0.2;
+    transition: opacity .15s ease-in-out;
+    background-color: var(--my-accent-color);
+    z-index: 0;
+    scale: 1;
+  }
+  &:hover::after {
+    opacity: 0.16;
+  }
+}
+
+.window-control.minmax,
+.window-control.minimize {
+  &::after {
+    opacity: 0;
+    background-color: var(--sidebar-btn-color);
+  }
+}
