@@ -33,6 +33,10 @@ body {
 
 /* ------------------------------------- */
 
+.qb-item-content:not(.text-white.button .qb-item-content) {
+  color: var(--text-color);
+}
+
 [sfc-name="RichAlbumGridDetails"] {
   border-radius: 12px;
   /* margin: 0px 0px 0px 15px; */
