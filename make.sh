@@ -24,6 +24,7 @@ cp src/big-screen.scss build/adwaita/
 cp src/big-screen.scss build/flatwaita/
 cp src/big-screen.scss build/yaru/
 
-cp src/adwaita-accent-colors/* build/adwaita
-cp src/flatwaita-accent-colors/* build/flatwaita
-cp src/yaru-accent-colors/* build/yaru
+cp src/accent-colors/adwaita/* build/adwaita
+cp src/accent-colors/flatwaita/* build/flatwaita
+cp src/accent-colors/yaru/* build/yaru
+
