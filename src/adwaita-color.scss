@@ -5,24 +5,20 @@
 /* ------------------------------------- */
 
 :root {
-  --sidebar-dark: #303030;
-  --background-dark: #242424;
-  --overlay-dark: #383838;
-  --sidebar-btn-dark: #454545;
-  --text-subtle-dark: #98989D;
-  --text-dark: #FFFFFF;
-  --border-dark: rgba(255, 255, 255, 0.15);
-  --border-hc-dark: rgba(255, 255, 255, 0.5);
+  --sidebar-bg-dark: #303030;
+  --secondary-sidebar-bg-dark: #2A2A2A;
+  --primary-bg-dark: #242424;
+  --popover-bg-dark: #383838;
+  --card-bg-dark: #363636;
+  --fg-dark: #FFFFFF;
 
-  --sidebar-light: #EBEBEB;
-  --background-light: #FFFFFF;
-  --overlay-light: var(--background-light);
-  --sidebar-btn-light: #DFDFDF;
-  --text-subtle-light: #949498;
-  --text-light: #000000;
-  --border-light: rgba(0, 0, 0, 0.15);
-  --border-hc-light: rgba(0, 0, 0, 0.5);
-  
-  /* See https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/css-variables.html#accent-colors */
+  --sidebar-bg-light: #EBEBEB;
+  --secondary-sidebar-bg-light: #F3F3F3;
+  --primary-bg-light: #FAFAFA;
+  --popover-bg-light: #FFFFFF; 
+  --card-bg-light: #FFFFFF;
+  --fg-light: #000000;
 }
+
+/* See https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/css-variables.html#accent-colors */
 
