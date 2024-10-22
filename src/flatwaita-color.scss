@@ -4,15 +4,30 @@
 /* ------------------------------------- */
 /*          Basic Configuration          */
 /* ------------------------------------- */
+
 :root {
-    --sidebar-dark: #303030;
-    --background-dark: #242424;
-    --overlay-dark: #383838;
-    --sidebar-btn-dark: #454545;
-    --text-subtle-dark: #887F78;
-    --text-dark: #E2D4C8;
-    --border-dark: rgba(226, 212, 200, 0.15);
-    --border-hc-dark: rgba(226, 212, 200, 0.5);
+  --sidebar-bg-dark: #303030;
+  --secondary-sidebar-bg-dark: #2A2A2A;
+  --primary-bg-dark: #242424;
+  --popover-bg-dark: #383838;
+  --card-bg-dark: #363636;
+  --fg-dark: #E2D4C8;
+
+  /*
+  --sidebar-bg-light: #EBEBEB;
+  --secondary-sidebar-bg-light: #F3F3F3;
+  --primary-bg-light: #FAFAFA;
+  --popover-bg-light: #FFFFFF; 
+  --card-bg-light: #FFFFFF;
+  --fg-light: #000000;
+  */
+
+  --sidebar-bg-light: #faf4ed;
+  --secondary-sidebar-bg-light: #FCF7EF;
+  --primary-bg-light: #fffaf3;
+  --popover-bg-light: #f2e9e1; 
+  --card-bg-light: #FFFFFF;
+  --fg-light: #575279;
 
     --sidebar-light: #faf4ed;
     --background-light: #fffaf3;
