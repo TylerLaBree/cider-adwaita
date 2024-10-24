@@ -5,38 +5,22 @@
 /*          Basic Configuration          */
 /* ------------------------------------- */
 
-:root {
-  --sidebar-bg-dark: #303030;
-  --secondary-sidebar-bg-dark: #2A2A2A;
-  --primary-bg-dark: #242424;
-  --popover-bg-dark: #383838;
-  --card-bg-dark: #363636;
-  --fg-dark: #E2D4C8;
 
-  /*
-  --sidebar-bg-light: #EBEBEB;
-  --secondary-sidebar-bg-light: #F3F3F3;
-  --primary-bg-light: #FAFAFA;
-  --popover-bg-light: #FFFFFF;
-  --card-bg-light: #FFFFFF;
-  --fg-light: #000000;
-  */
+$colors: (
+  'sidebar-bg-dark': #303030,
+  'secondary-sidebar-bg-dark': #2A2A2A,
+  'primary-bg-dark': #242424,
+  'popover-bg-dark': #383838,
+  'card-bg-dark': #363636,
+  'fg-dark': #E2D4C8,
 
-  --sidebar-bg-light: #faf4ed;
-  --secondary-sidebar-bg-light: #FCF7EF;
-  --primary-bg-light: #fffaf3;
-  --popover-bg-light: #f2e9e1;
-  --card-bg-light: #FFFFFF;
-  --fg-light: #575279;
+  'sidebar-bg-light': #faf4ed,
+  'secondary-sidebar-bg-light': #FCF7EF,
+  'primary-bg-light': #fffaf3,
+  'popover-bg-light': #f2e9e1,
+  'card-bg-light': #FFFCF9,
+  'fg-light': #575279
+);
 
-    --sidebar-light: #faf4ed;
-    --background-light: #fffaf3;
-    --overlay-light: #f2e9e1;
-    --sidebar-btn-light: #f4ede8;
-    --text-subtle-light: #9893a5;
-    --text-light: #575279;
-    --border-light: rgba(87, 82, 121, 0.15);
-    --border-hc-light: rgba(87, 82, 121, 0.5);
+/* See https://rosepinetheme.com/palette/ingredients/ */
 
-    /* See https://rosepinetheme.com/palette/ingredients/ */
-}

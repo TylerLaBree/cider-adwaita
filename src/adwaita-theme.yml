@@ -1,7 +1,7 @@
 name: Adwaita-testing
 author: nthelt
 stylesheets:
-  - file: main.scss
+  - file: main.css
     name: Base theme
     description: Minimalist and sleek. Designed to match the gnome desktop environment.
   - file: window-controls.scss

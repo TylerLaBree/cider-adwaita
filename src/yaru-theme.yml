@@ -1,7 +1,7 @@
 name: Yaru
 author: nthelt
 stylesheets:
-  - file: main.scss
+  - file: main.css
     name: Base theme
     description: Minimalist and sleek. Designed to match Ubuntu.
   - file: big-screen.scss

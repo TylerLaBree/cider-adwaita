@@ -6,12 +6,16 @@ cp src/yaru-theme.yml build/yaru/theme.yml
 
 cp src/adwaita-color.scss build/adwaita/main.scss
 cp src/flatwaita-color.scss build/flatwaita/main.scss
-cp src/yaru-color.scss build/yaru/main.scss
+cp src/adwaita-color.scss build/yaru/main.scss
 
 cat src/main.scss >> build/adwaita/main.scss
 cat src/main.scss >> build/flatwaita/main.scss
 cat src/main.scss >> build/yaru/main.scss
-cat src/yaru-mods.scss >> build/yaru/main.scss
+#cat src/yaru-mods.scss >> build/yaru/main.scss
+
+sass build/adwaita/main.scss build/adwaita/main.css
+sass build/flatwaita/main.scss build/flatwaita/main.css
+sass build/yaru/main.scss build/yaru/main.css
 
 cp src/window-controls.scss build/adwaita/
 cp src/window-controls.scss build/flatwaita/

@@ -1,33 +1,526 @@
+// Export base colors to CSS variables
+:root {
+  @each $name, $color in $colors {
+    --#{$name}: #{$color};
+  }
+}
+
 body {
   font-family: 'Inter Variable', 'Cantarell', 'Helvetica Neue', 'Arial', 'sans-serif';
   font-size: 14px;
 }
 
+// Apply themes based on class
+@mixin apply-theme($theme) {
+  --sidebar-bg: var(--sidebar-bg-#{$theme});
+  --secondary-sidebar-bg: var(--secondary-sidebar-bg-#{$theme});
+  --primary-bg: var(--primary-bg-#{$theme});
+  --popover-bg: var(--popover-bg-#{$theme});
+  --card-bg: var(--card-bg-#{$theme});
+  --fg: var(--fg-#{$theme});
+
+  $fg-color: map-get($colors, 'fg-' + $theme);
+
+  --text: #{$fg-color};
+  --text-dim: #{rgba($fg-color, 0.55)};
+  --text-dim-hc: #{rgba($fg-color, 0.90)};
+  --border: #{rgba($fg-color, 0.15)};
+  --border-hc: #{rgba($fg-color, 0.5)};
+  --icon: #{rgba($fg-color, if($theme == 'dark', 1, 0.795))};
+  --button-hover: #{rgba($fg-color, if($theme == 'dark', 0.07, 0.056))};
+  --button-active: #{rgba($fg-color, if($theme == 'dark', 0.1, 0.08))};
+
+  --twenny-five:#{rgba($fg-color, 0.25)};
+}
+
 body.body--dark {
-  --sidebar-bg: var(--sidebar-bg-dark);
-  --secondary-sidebar-bg: var(--secondary-sidebar-bg-dark);
-  --primary-bg: var(--primary-bg-dark);
-  --popover-bg: var(--popover-bg-dark);
-  --card-bg: var(--card-bg-dark);
-  --fg: var(--fg-dark);
+  @include apply-theme('dark');
+  --media-controls-shadow: 0 0 0 1px color(srgb 0 0 0 / 0.1875), 0 2px 8px 2px rgba(0, 0, 0, 0.25), 0 3px 20px 10px rgba(0, 0, 0, 0.05), 0 6px 32px 16px rgba(0, 0, 0, 0.02);
 }
 
 body.body--light {
-  --sidebar-bg: var(--sidebar-bg-light);
-  --secondary-sidebar-bg: var(--secondary-sidebar-bg-light);
-  --primary-bg: var(--primary-bg-light);
-  --popover-bg: var(--popover-bg-light);
-  --card-bg: var(--card-bg-light);
-  --fg: var(--fg-light);
+  @include apply-theme('light');
+  --media-controls-shadow: 0 0 0 1px color(srgb 0 0 0 / 0.0525), 0 2px 8px 2px rgba(0, 0, 0, 0.07), 0 3px 20px 10px rgba(0, 0, 0, 0.05), 0 6px 32px 16px rgba(0, 0, 0, 0.02);
+  .text-default {
+    color: var(--textDefault); /* fix random text in light mode??? */
+  }
 }
 
 body {
-  --text: var(--fg);
-  --text-dim: rgba(var(--text-color), 0.55); 
-  --text-dim-hc: rgba(var(--text-color), 0.90); 
-  --border: rgba(var(--text-color), 0.15);
-  --border-hc: rgba(var(--text-color), 0.5);
-  --button-hover: rgba(var(--text-color), 0.1);
-  --button-active: rgba(var(--text-color), 0.19);
+  --systemPrimary: var(--text);
+  --systemSecondary: var(--text-dim);
+  --systemTertiary: var(--button-hover);
+  --systemGray :var(--text-dim);
+  --textDefault: var(--text);
+}
+/*
+body {
+  --systemPrimary: var(--text);
+  --systemSecondary: var(--text-dim);
+  --systemTertiary: var(--text);
+  --progressColor: var(--text-dim);
+}
+*/
+
+
+/* ------------------------------------- */
+/*         Bigger/Rounder Buttons        */
+/* ------------------------------------- */
+
+.primary-actions {
+  height: 44px;
+  border-radius: 60px;
+  color: var(--primary-bg-light); /* Text and Icon color */
 }
 
+.detail-actions {
+  border: 0px 20px;
+}
+
+
+/* ------------------------------------- */
+/*               Sidebars                */
+/* ------------------------------------- */
+
+[sfc-name="Sidebar"] { /* Recolor buttons, icons */
+  .nucleo-icon,
+  .q-icon,
+  .nav-icon { /* Recolor icons in sidebar */
+    color: var(--icon);
+  }
+  [sfc-name="NavigationButton"]:hover {
+      color: var(--text);
+      background-color: var(--button-hover);
+    }
+  [sfc-name="NavigationButton"].active {
+    color: var(--text);
+    background-color: var(--button-active);
+  }
+}
+
+[sfc-name="NavigationButton"] {
+  height: 42px; /* Increase height of sidebar buttons */
+}
+
+[sfc-name="Sidebar"] { /* Replace collapsing menus with divider lines */
+  .am-expansion-item {
+    pointer-events: none; /* Disables clicking */
+    position: relative;
+    padding: 5px 0;
+    height: 0px;
+  }
+  .am-expansion-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--border);
+  }
+  .sidebar-label,
+  .expand-button {
+    display: none; /* Hide dropdown arrow and text on spacer */
+  }
+}
+
+.am-expansion-item:first-of-type { /* Remove top spacer */
+  display: none;
+}
+
+.left-drawer-resize-handle,
+.right-drawer-resize-handle { /* Remove sidebar resize handle */
+  display: none;
+}
+
+.ns-sidebar {
+  width: clamp(180px, 20%, 240px);      /* Set sidebar width automatically based on window */
+                                        /* width, based on Gnome Files */
+  background-color: var(--sidebar-bg);  /* Set sidebar background color */
+
+  /* width: clamp(202px, 25%, 279px); */ /* Gnome Settings width */
+}
+
+body.body--light .new-shell-page-container { /* Set border on sidebar in light mode */
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+
+body.body--dark .new-shell-page-container { /* Keep spacing with above in dark mode */
+  border-left: 1px solid var(--primary-bg);
+  border-right: 1px solid var(--primary-bg);
+}
+
+.left-drawer-overlay {
+  width: 240px;
+  background: var(--sidebar-bg);
+}
+
+.search-box.cSearch { /* Recolor sidebar search */
+  /* WIP (for some reason the text color is translucent or behind the background color */
+  border: unset;
+  box-shadow: unset;
+  background: var(--button-active);
+  color: var(--text);
+  opacity: 1;
+  font-size: 14px;
+}
+
+[sfc-name=AMQueueItem] {
+  height: 55px;
+}
+
+[sfc-name=RightDrawerContent] [sfc-name=QCardSection] .icon {
+  color: var(--icon);
+}
+
+
+/* ------------------------------------- */
+/*             Primary Pane              */
+/* ------------------------------------- */
+
+.new-shell-page-container { /* Set primary background */
+  background-color: var(--primary-bg);
+}
+
+.lockupControls .play:hover,
+.lockupControls .menu:hover,
+.powerswoosh-lockup-controls-container { /* Set lockup control icon color to light bg color on hover. The accent color surronds this icon. */
+  ._svg-icon {
+    background: var(--primary-bg-light);
+  }
+}
+
+[sfc-name=Playlist] .cloud-buttons,
+[sfc-name=Playlist] [sfc-name=ListItem],
+[sfc-name=VueHorizontal] [sfc-name=ListItemShort] { /* Recolor icons on playlist & album pages, and on short list item suggestions. */
+  .add-to-library-btn,
+  .nucleo-icon,
+  .q-icon,
+  .nav-icon,
+  .feather { /* Recolor icons */
+    color: var(--icon);
+  }
+  ._svg-icon { /* Recolor svg icons */
+    background: var(--icon);
+  }
+  .text-primary { /* Recolor text "Add" */
+    color: var(--text);
+  }
+  .q-hoverable:hover.q-focus-helper::after { /* Recolor hover background */
+    background: var(--button-hover);
+    opacity: 1;
+  }
+  .artwork:has(.artwork.loaded) .q-icon { /* Set album art "play" lockup button to light background color. */
+    color: var(--primary-bg-light);
+  }
+}
+
+[sfc-name=VueHorizontal]:has([sfc-name=ListItemShort]) { 
+  /* Make short list item sections into card lists */
+  .section {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    border: unset;
+    margin: 5px;
+    margin-right: 16px;
+    width: 360px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.03), 0 1px 3px 1px rgba(0,0,0,0.07), 0 2px 6px 2px rgba(0,0,0,0.03);
+    [sfc-name=ListItemShort]::before { /* Make borders between list items. */
+      border-top: 1px solid var(--primary-bg);
+      filter: brightness(0.95);
+      left: 0px;
+      right: 0px;
+    }
+    .c-listitem-short.selected {
+      background-color: var(--button-active);
+    }
+    [sfc-name=ListItemShort]:hover {
+        background-color: var(--button-hover);
+    }
+
+    [sfc-name=ListItemShort] {
+      height: 55px;
+      grid-template-columns: 6px 40px 1fr 24px 24px; /* fix spacing */
+      border-radius: 0px ;
+    }
+    [sfc-name=ListItemShort]:hover { /* fix spacing */
+      grid-template-columns: 6px 40px 1fr 24px 24px 24px;
+    }
+    [sfc-name=ListItemShort]:first-of-type { /* round top corners */
+      border-radius: 12px 12px 0 0;
+      &::before {
+        border-top: unset;
+      }
+    }
+    [sfc-name=ListItemShort]:last-of-type { /* round bottom corners */
+      border-radius: 0 0 12px 12px;
+    }
+  }
+  [sfc-name=ListItemShort] .content {
+    gap: 3px 0;
+    .content-title { /* title font */
+      font-size: 15px;
+      color: var(--text);
+      font-weight: 500;
+    }
+    .content-artist { /* artist font */
+      font-size: 12px;
+      color: var(--text-dim);
+      font-weight: 400;
+    }
+  }
+}
+
+[sfc-name=MediaItem] {
+  .title-text {
+    font-size: 15px;
+    color: var(--text);
+    font-weight: 500;
+  }
+  .artistLink {
+    font-size: 12px;
+    color: var(--text-dim);
+    font-weight: 400;
+  }
+}
+
+[sfc-name=LibraryArtists] {
+  .q-drawer {
+    background: var(--secondary-sidebar-bg);
+    // .q-item.q-item-type.row.no-wrap.q-item--dark.q-item--clickable.q-link.cursor-pointer.q-focusable.q-hoverable {
+    .q-item {
+      border-radius: 6px;
+      margin: 3px;
+      .q-focus-helper {
+        color: var(--button-hover);
+        opacity: 1;
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
+    }
+    .bg-primary {
+      background: var(--button-active);
+    }
+  }
+}
+
+
+/* ------------------------------------- */
+/*             Media Controls            */
+/* ------------------------------------- */
+
+.new-shell [sfc-name=MojavePlayer] {
+  box-shadow: var(--media-controls-shadow);
+  height: 105px;
+  [sfc-name="AMPlayAction"],
+  [sfc-name="AMPauseAction"] {
+    margin: 0 6px 0 6px;
+    border: 0;
+    background-size: cover;
+    height: 46px;
+    width: 46px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    border-radius: 100%;
+    .play-icon {
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      ._svg-icon {
+        background: var(--primary-bg-light);
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: var(--keyColor);
+      background-size: 10px;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 50%;
+    }
+  }
+
+  [sfc-name="AMPlaybackActions"] {
+    margin-top: 0px;
+    align-items: center;
+    ._svg-icon {
+      --size: 26px;
+      background: var(--icon);
+    }
+    [sfc-name=AMShuffleAction],
+    [sfc-name=AMPrevAction],
+    [sfc-name=AMNextAction],
+    [sfc-name=AMRepeatAction] {
+      opacity: 1;
+    }
+  }
+  [sfc-name=AMProgressWidget] {
+    .am-currenttime,
+    .am-duration {
+      opacity: 1;
+      color: var(--text-dim);
+    }
+  }
+  [sfc-name=AMProgressBar],
+  [sfc-name=AMVolumeSlider] {
+    .overlay-progress-track {
+      background-color: var(--twenny-five);
+    }
+    .overlay-progress-bar {
+      background-color: var(--icon);
+    }
+    .icon {
+      opacity: 1;
+    }
+  }
+  .volume-container.active .feather {
+    color: var(--icon);
+    opacity: 1;
+  }
+  .add-to-library-btn,
+  .nucleo-icon,
+  .q-icon:not(.action-active .q-icon),
+  .nav-icon,
+  .feather { /* Recolor icons */
+    color: var(--icon);
+    opacity: 1;
+  }
+  ._svg-icon { /* Recolor svg icons */
+    background: var(--icon);
+    opacity: 1;
+  }
+  .chrome-button-content {
+    opacity: 1;
+  }
+  [sfc-name=AMPMetadataMojave] {
+    .release-info {
+      opacity: 1;
+      color: var(--text-dim);
+    }
+  }
+}
+
+.q-tooltip.q-tooltip--style.q-position-engine.no-pointer-events:has(.popover-artwork) {
+  padding: 0px 0px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+
+/* ------------------------------------- */
+/*           Rich Album Grid             */
+/* ------------------------------------- */
+
+.shelf-item-expanded {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+[sfc-name="RichAlbumGridDetails"] {
+  --keyColor: var(--textColor);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  .more-btn .material-icons {
+    font-weight: 900;
+  }
+  .artwork-container {
+    -webkit-mask-image: unset;
+  }
+  [sfc-name="MediaItemArtwork"] {
+    border-radius: 12px;
+    border: 1px solid transparent;
+  }
+  .ri-list-item:focus {
+    color: var(--bgColor);
+    background: var(--textColor);
+    .playing-indicator {
+      --eq-bars-bg-color: var(--bgColor);
+    }
+    .q-icon {
+      color: var(--bgColor);
+    }
+  }
+}
+
+
+/* ------------------------------------- */
+/*               Title Bar               */
+/* ------------------------------------- */
+
+[sfc-name=QToolbar].chrome-top:not(.no-controls) {
+  padding: 0 120px 0 12px;
+}
+
+[sfc-name=QToolbar] {
+  .add-to-library-btn,
+  .nucleo-icon,
+  .q-icon,
+  .nav-icon,
+  .feather,
+  .vue-feather { /* Recolor icons */
+    color: var(--icon);
+  }
+  ._svg-icon { /* Recolor svg icons */
+    background: var(--icon);
+  }
+  .chrome-button {
+    color: var(--icon);
+    &:hover::before {
+      opacity: 1;
+    }
+  }
+  .chrome-button-content {
+    opacity: 1;
+  }
+}
+
+[sfc-name=window-controls-windows] {
+  width: 115px;
+  .close,
+  .minmax,
+  .minimize {
+    font-size: 12px;
+    font-weight: 900;
+    color: var(--icon);
+    background-size: cover;
+    margin: 12px 6px;
+    padding: 0px 12px;
+    height: 24px;
+    width: 24px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    border-radius: 100%;
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-size: 10px;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 50%;
+
+      opacity: 0.1;
+      transition: opacity .15s ease-in-out;
+      background-color: var(--icon);
+      z-index: 0;
+      scale: 1;
+    }
+    &:hover::after {
+      opacity: 0.16;
+    }
+  }
+}
+
+/* ------------------------------------- */
+/*             Popover Menu              */
+/* ------------------------------------- */
+
+/* TODO */

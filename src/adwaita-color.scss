@@ -4,21 +4,20 @@
 /*          Basic Configuration          */
 /* ------------------------------------- */
 
-:root {
-  --sidebar-bg-dark: #303030;
-  --secondary-sidebar-bg-dark: #2A2A2A;
-  --primary-bg-dark: #242424;
-  --popover-bg-dark: #383838;
-  --card-bg-dark: #363636;
-  --fg-dark: #FFFFFF;
+$colors: (
+  'sidebar-bg-dark': #303030,
+  'secondary-sidebar-bg-dark': #2A2A2A,
+  'primary-bg-dark': #242424,
+  'popover-bg-dark': #383838,
+  'card-bg-dark': #363636,
+  'fg-dark': #FFFFFF,
 
-  --sidebar-bg-light: #EBEBEB;
-  --secondary-sidebar-bg-light: #F3F3F3;
-  --primary-bg-light: #FAFAFA;
-  --popover-bg-light: #FFFFFF;
-  --card-bg-light: #FFFFFF;
-  --fg-light: #000000;
-}
-
+  'sidebar-bg-light': #EBEBEB,
+  'secondary-sidebar-bg-light': #F3F3F3,
+  'primary-bg-light': #FAFAFA,
+  'popover-bg-light': #FFFFFF,
+  'card-bg-light': #FFFFFF,
+  'fg-light': #000000cc
+);
 /* See https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/css-variables.html#accent-colors */
 
