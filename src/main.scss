@@ -37,6 +37,7 @@ body {
 body.body--dark {
   @include apply-theme('dark');
   --media-controls-shadow: 0 0 0 1px color(srgb 0 0 0 / 0.1875), 0 2px 8px 2px rgba(0, 0, 0, 0.25), 0 3px 20px 10px rgba(0, 0, 0, 0.05), 0 6px 32px 16px rgba(0, 0, 0, 0.02);
+  color: var(--fg);
 }
 
 body.body--light {
@@ -45,6 +46,7 @@ body.body--light {
   .text-default {
     color: var(--textDefault); /* fix random text in light mode??? */
   }
+  color: var(--fg);
 }
 
 body {
