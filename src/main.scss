@@ -233,7 +233,7 @@ body.body--dark .new-shell-page-container { /* Keep spacing with above in dark m
       right: 0px;
     }
     .c-listitem-short.selected {
-      background-color: var(--button-active);
+      background-color: var(--card-bg);
     }
     [sfc-name=ListItemShort]:hover {
         background-color: var(--button-hover);
