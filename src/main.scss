@@ -1,3 +1,4 @@
+
 // Export base colors to CSS variables
 :root {
   @each $name, $color in $colors {
@@ -523,4 +524,28 @@ body.body--dark .new-shell-page-container { /* Keep spacing with above in dark m
 /*             Popover Menu              */
 /* ------------------------------------- */
 
-/* TODO */
+.q-menu {
+  background-color: var(--popover-bg);
+  [sfc-name=ContextMenuIcon] {
+    .q-icon,
+    .nucleo-icon,
+    .nav-icon,
+    .feather {
+      color: var(--icon);
+    }
+  }
+  [sfc-name=QItem]:hover,
+  [sfc-name=CascadeItem]:hover {
+    color: var(--text);
+    background-color: var(--button-active);
+  }
+
+  [sfc-name=QItem],
+  [sfc-name=CascadeItem] {
+    color: var(--text);
+    .q-icon {
+      color: var(--icon);
+    }
+  }
+}
+
